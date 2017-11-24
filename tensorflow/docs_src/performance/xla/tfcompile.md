@@ -222,7 +222,7 @@ Example of invoking the generated function based on
 
 #include <iostream>
 #include "third_party/eigen3/unsupported/Eigen/CXX11/Tensor"
-#include "tensorflow/compiler/aot/tests/test_graph_tfmatmul.h" // generated
+#include "tensorflow/compiler/aot/tests/test_graph_tfmatmul.h" // generated, change it to your project path
 
 int main(int argc, char** argv) {
   Eigen::ThreadPool tp(2);  // Size the thread pool as appropriate.
@@ -258,8 +258,8 @@ file.
 
 ```build
 # Example of linking your binary
-# Also see //third_party/tensorflow/compiler/aot/tests/BUILD
-load("//third_party/tensorflow/compiler/aot:tfcompile.bzl", "tf_library")
+# Also see //tensorflow/compiler/aot/tests/BUILD
+load("//tensorflow/compiler/aot:tfcompile.bzl", "tf_library")
 
 # The same tf_library call from step 2 above.
 tf_library(
@@ -276,6 +276,8 @@ cc_binary(
     deps = [
         ":test_graph_tfmatmul",  # link in the generated object file
         "//third_party/eigen3",
+        "//tensorflow/compiler/tf2xla:xla_local_runtime_context",
+        "//tensorflow/compiler/tf2xla:xla_compiled_cpu_function",
     ],
     linkopts = [
           "-lpthread",
