@@ -222,7 +222,7 @@ Example of invoking the generated function based on
 
 #include <iostream>
 #include "third_party/eigen3/unsupported/Eigen/CXX11/Tensor"
-#include "tensorflow/compiler/aot/tests/test_graph_tfmatmul.h" // generated
+#include "tensorflow/compiler/aot/tests/test_graph_tfmatmul.h" // generated, change it to your project path
 
 int main(int argc, char** argv) {
   Eigen::ThreadPool tp(2);  // Size the thread pool as appropriate.
