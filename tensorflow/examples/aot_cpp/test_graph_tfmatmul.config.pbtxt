@@ -1,0 +1,22 @@
+# Each feed is a positional input argument for the generated function. The order
+# of each entry matches the order of each input argument.
+feed {
+  id { node_name: "A" }
+  shape {
+    dim { size: 100 }
+    dim { size: 200 }
+  }
+}
+feed {
+  id { node_name: "B" }
+  shape {
+    dim { size: 200 }
+    dim { size: 100 }
+  }
+}
+
+# Each fetch is a positional output argument for the generated function. The order
+# of each entry matches the order of each output argument.
+fetch {
+  id { node_name: "C" }
+}
